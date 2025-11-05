@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Animated Red–Black Theme ===== */
+body {
+  @apply text-gray-100;
+  background: linear-gradient(-45deg, #000000, #1a0000, #330000, #660000);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Smooth background movement */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow effect for buttons, cards, and highlights */
+.glow-red {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3),
+              0 0 30px rgba(255, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.glow-red:hover {
+  box-shadow: 0 0 30px rgba(255, 50, 50, 0.6),
+              0 0 60px rgba(255, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Card + Section styling */
+.section-dark {
+  background: rgba(10, 0, 0, 0.8);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  padding: 4rem 2rem;
+}
+
+/* Gradient text for titles */
+h1, h2, h3, h4 {
+  background: linear-gradient(to right, #ff0000, #ff5555, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
