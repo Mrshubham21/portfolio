@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Github } from 'lucide-react';
+import sugarcaneImg from'../assests/sugarcane.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,14 +60,17 @@ const Work = () => {
       live: 'https://beamish-zabaione-0ce8a2.netlify.app/', // ✅ your Netlify link
       github: 'https://github.com/yourusername/anime-merch-site', // optional
     },
-    {
-      title: 'BMI Calculator',
-      description:
-        'A visually appealing BMI Calculator built with Flutter on DartPad, featuring a dark-themed responsive UI and real-time BMI computation. Showcases strong command over Flutter widgets and state management.',
-      image:
-        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Flutter'],
-    },
+  {
+  title: 'Sugarcane Disease Detection',
+  description:
+    'A machine learning-based web application that detects sugarcane plant diseases using image processing and deep learning. It helps farmers identify crop issues early and improve yield. Built with Python, TensorFlow, and a modern web interface.',
+ image: 
+  sugarcaneImg, 
+   tags: ['Python', 'Machine Learning', 'TensorFlow', 'Web App'],
+  featured: true,
+  live: 'YOUR_LIVE_LINK_HERE',   // optional
+  github: 'github: "https://github.com/Mrshubham21/Sugar-cane-diseases-detection"', // optional
+},
   ];
 
   return (
