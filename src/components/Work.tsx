@@ -58,7 +58,7 @@ const Work = () => {
       tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       featured: true,
       live: 'https://beamish-zabaione-0ce8a2.netlify.app/', // ✅ your Netlify link
-      github: 'https://github.com/yourusername/anime-merch-site', // optional
+      github: 'https://github.com/Mrshubham21/Animesite', // optional
     },
   {
   title: 'Sugarcane Disease Detection',
@@ -69,7 +69,7 @@ const Work = () => {
    tags: ['Python', 'Machine Learning', 'TensorFlow', 'Web App'],
   featured: true,
   live: 'YOUR_LIVE_LINK_HERE',   // optional
-  github: 'github: "https://github.com/Mrshubham21/Sugar-cane-diseases-detection"', // optional
+  github: 'github: "https://github.com/Mrshubham21/Sugar-cane-diseases-detection.git"', // optional
 },
   ];
 
