@@ -69,7 +69,7 @@ const Work = () => {
    tags: ['Python', 'Machine Learning', 'TensorFlow', 'Web App'],
   featured: true,
   live: 'YOUR_LIVE_LINK_HERE',   // optional
-  github: 'github: "https://github.com/Mrshubham21/Sugar-cane-diseases-detection"', // optional
+  github: 'https://github.com/Mrshubham21/Sugar-cane-diseases-detection', // optional
 },
   ];
 
