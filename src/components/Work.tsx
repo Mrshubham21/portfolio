@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import pdfImage from '../assests/pdf.png';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Github } from 'lucide-react';
-import sugarcaneImg from'../assests/sugarcane.png';
+import React, { useEffect, useRef } from "react";
+import pdfImage from "../assests/pdf.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ExternalLink, Github } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,12 +20,12 @@ const Work = () => {
           y: 0,
           opacity: 1,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: titleRef.current,
-            start: 'top 80%',
+            start: "top 80%",
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -37,12 +36,12 @@ const Work = () => {
           opacity: 1,
           duration: 0.8,
           stagger: 0.3,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: projectsRef.current,
-            start: 'top 80%',
+            start: "top 80%",
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -51,26 +50,43 @@ const Work = () => {
 
   const projects = [
     {
-      title: 'Anime Merchandise Site',
+      title: "Anime Merchandise Site",
       description:
-        'A modern and responsive e-commerce site built with HTML, CSS, and JavaScript, featuring Firebase integration for real-time data storage and smooth dynamic interactions.',
+        "A modern and responsive e-commerce site built with HTML, CSS, and JavaScript, featuring Firebase integration for real-time data storage and smooth dynamic interactions.",
       image:
-        'https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=80', // Anime-like dark theme image
-      tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+        "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=80", // Anime-like dark theme image
+      tags: ["HTML", "CSS", "JavaScript", "Firebase"],
       featured: true,
-      live: 'https://beamish-zabaione-0ce8a2.netlify.app/', // ✅ your Netlify link
-      github: 'https://github.com/Mrshubham21/Animesite', // optional
+      live: "https://beamish-zabaione-0ce8a2.netlify.app/", // ✅ your Netlify link
+      github: "https://github.com/Mrshubham21/Animesite", // optional
     },
-  {
-  title: 'Rag Based Pdf Generator',
-  description:
-    'A full-stack PDF RAG chatbot that lets users upload PDFs, process their content, and ask AI-powered questions using semantic search and Gemini.',
-    image:pdfImage ,
-   tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'MongoDB Atlas', 'Redis', 'ChromaDB', 'LangChain', 'Sentence Transformers', 'Gemini API', 'RAG', 'REST API'],
-  featured: true,
-  live: 'https://ragpdf-three.vercel.app/',   // optional
-  github: 'https://github.com/Mrshubham21/ragpdf.git', // optional
-},
+    {
+      title: "Rag Based Pdf Generator",
+      description:
+        "A full-stack PDF RAG chatbot that lets users upload PDFs, process their content, and ask AI-powered questions using semantic search and Gemini.",
+      image: pdfImage,
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "Python",
+        "FastAPI",
+        "MongoDB Atlas",
+        "Redis",
+        "ChromaDB",
+        "LangChain",
+        "Sentence Transformers",
+        "Gemini API",
+        "RAG",
+        "REST API",
+      ],
+      featured: true,
+      live: "https://ragpdf-three.vercel.app/",
+      github: "https://github.com/Mrshubham21/ragpdf.git",
+    },
   ];
 
   return (
@@ -92,11 +108,11 @@ const Work = () => {
             <div
               key={index}
               className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
             >
               {/* Image Section */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+              <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                 <div className="relative group overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(255,0,0,0.3)] hover:shadow-[0_0_40px_rgba(255,0,0,0.6)] transition-all duration-500">
                   <img
                     src={project.image}
@@ -137,7 +153,7 @@ const Work = () => {
               {/* Description Section */}
               <div
                 className={`${
-                  index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
+                  index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
                 }`}
               >
                 <div className="space-y-6">
