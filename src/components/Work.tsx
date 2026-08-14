@@ -61,15 +61,14 @@ const Work = () => {
       github: 'https://github.com/Mrshubham21/Animesite', // optional
     },
   {
-  title: 'Sugarcane Disease Detection',
+  title: 'Rag Based Pdf Generator',
   description:
-    'A machine learning-based web application that detects sugarcane plant diseases using image processing and deep learning. It helps farmers identify crop issues early and improve yield. Built with Python, TensorFlow, and a modern web interface.',
- image: 
-  sugarcaneImg, 
-   tags: ['Python', 'Machine Learning', 'TensorFlow', 'Web App'],
+    'A full-stack PDF RAG chatbot that lets users upload PDFs, process their content, and ask AI-powered questions using semantic search and Gemini.',
+ image:'scr/assets/pdf.png' ,
+   tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'MongoDB Atlas', 'Redis', 'ChromaDB', 'LangChain', 'Sentence Transformers', 'Gemini API', 'RAG', 'REST API'],
   featured: true,
-  live: 'YOUR_LIVE_LINK_HERE',   // optional
-  github: 'https://github.com/Mrshubham21/Sugar-cane-diseases-detection', // optional
+  live: 'https://ragpdf-three.vercel.app/',   // optional
+  github: 'https://github.com/Mrshubham21/ragpdf.git', // optional
 },
   ];
 
