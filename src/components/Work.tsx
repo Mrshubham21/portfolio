@@ -64,7 +64,7 @@ const Work = () => {
   title: 'Rag Based Pdf Generator',
   description:
     'A full-stack PDF RAG chatbot that lets users upload PDFs, process their content, and ask AI-powered questions using semantic search and Gemini.',
- image:'scr/assets/pdf.png' ,
+ image:'src/assets/pdf.png' ,
    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'MongoDB Atlas', 'Redis', 'ChromaDB', 'LangChain', 'Sentence Transformers', 'Gemini API', 'RAG', 'REST API'],
   featured: true,
   live: 'https://ragpdf-three.vercel.app/',   // optional
