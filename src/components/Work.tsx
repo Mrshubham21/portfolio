@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import pdfImage from './assets/pdf.png';
+import pdfImage from './assests/pdf.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Github } from 'lucide-react';
