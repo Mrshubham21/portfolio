@@ -77,9 +77,10 @@ const Work = () => {
 
       featured: true,
 
-      live: "",
+      live: "animestore-465160wx7-st689801-6062s-projects.vercel.app",
 
       github: "https://github.com/Mrshubham21/animestore.git",
+
     },
 
     {
