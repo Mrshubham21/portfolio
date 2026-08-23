@@ -1,15 +1,19 @@
 import React, { useEffect, useRef } from "react";
+
 import pdfImage from "../assests/pdf.png";
+import animeMerchImage from "../assests/anime-merch.png";
+import anime from "../assests/anime.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { ExternalLink, Github } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,21 +32,25 @@ const Work = () => {
         },
       );
 
-      gsap.fromTo(
-        projectsRef.current?.children || [],
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.3,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: projectsRef.current,
-            start: "top 80%",
+      const projectElements = projectsRef.current?.children;
+
+      if (projectElements) {
+        gsap.fromTo(
+          projectElements,
+          { y: 100, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: projectsRef.current,
+              start: "top 80%",
+            },
           },
-        },
-      );
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -50,42 +58,54 @@ const Work = () => {
 
   const projects = [
     {
-      title: "Anime Merchandise Site",
+      title: "Anime Merchandise E-commerce",
       description:
-        "A modern and responsive e-commerce site built with HTML, CSS, and JavaScript, featuring Firebase integration for real-time data storage and smooth dynamic interactions.",
-      image:
-        "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=80", // Anime-like dark theme image
-      tags: ["HTML", "CSS", "JavaScript", "Firebase"],
-      featured: true,
-      live: "https://beamish-zabaione-0ce8a2.netlify.app/", // ✅ your Netlify link
-      github: "https://github.com/Mrshubham21/Animesite", // optional
-    },
-    {
-      title: "Rag Based Pdf Generator",
-      description:
-        "A full-stack PDF RAG chatbot that lets users upload PDFs, process their content, and ask AI-powered questions using semantic search and Gemini.",
-      image: pdfImage,
+        "A full-stack anime merchandise e-commerce platform built with the MERN stack. Features JWT authentication, product browsing, product details, cart management, protected APIs, and a responsive modern UI connected to MongoDB Atlas.",
+
+      image: anime,
+
       tags: [
-        "Next.js",
         "React",
-        "TypeScript",
+        "Vite",
         "Tailwind CSS",
         "Node.js",
         "Express.js",
-        "Python",
-        "FastAPI",
-        "MongoDB Atlas",
-        "Redis",
-        "ChromaDB",
-        "LangChain",
-        "Sentence Transformers",
-        "Gemini API",
-        "RAG",
+        "MongoDB",
+        "JWT",
         "REST API",
       ],
+
       featured: true,
+
+      live: "",
+
+      github: "https://github.com/Mrshubham21/animestore.git",
+    },
+
+    {
+      title: "RAG Based PDF Generator",
+      description:
+        "A full-stack AI-powered PDF RAG application that allows users to upload documents, process their content, and ask questions using semantic search and Gemini-powered responses.",
+
+      image: pdfImage,
+
+      tags: [
+        "Next.js",
+        "React",
+        "Python",
+        "FastAPI",
+        "MongoDB",
+        "ChromaDB",
+        "LangChain",
+        "Gemini API",
+        "RAG",
+      ],
+
+      featured: true,
+
       live: "https://ragpdf-three.vercel.app/",
-      github: "https://github.com/Mrshubham21/ragpdf.git",
+
+      github: "https://github.com/Mrshubham21/ragpdf",
     },
   ];
 
@@ -96,13 +116,28 @@ const Work = () => {
       className="py-24 bg-gradient-to-br from-black via-red-950 to-black text-gray-100"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Heading */}
         <h2
           ref={titleRef}
-          className="text-4xl md:text-6xl font-extrabold text-center mb-16 bg-gradient-to-r from-red-500 via-red-400 to-red-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl font-extrabold text-center mb-8 bg-gradient-to-r from-red-500 via-red-400 to-red-600 bg-clip-text text-transparent"
         >
           Featured Work
         </h2>
 
+        {/* GitHub Profile */}
+        <div className="flex justify-center mb-16">
+          <a
+            href="https://github.com/Mrshubham21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(255,0,0,0.4)] hover:shadow-[0_0_25px_rgba(255,0,0,0.6)]"
+          >
+            <Github size={20} />
+            <span>View My GitHub</span>
+          </a>
+        </div>
+
+        {/* Projects */}
         <div ref={projectsRef} className="space-y-24">
           {projects.map((project, index) => (
             <div
@@ -119,7 +154,9 @@ const Work = () => {
                     alt={project.title}
                     className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                   <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex space-x-4">
                       {project.live && (
@@ -139,7 +176,7 @@ const Work = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-2 px-4 py-2 bg-black/70 hover:bg-black text-red-400 rounded-full text-sm font-medium transition-colors border border-red-500/50"
+                          className="flex items-center space-x-2 px-4 py-2 bg-black/80 hover:bg-black text-red-400 rounded-full text-sm font-medium transition-colors border border-red-500/50"
                         >
                           <Github size={16} />
                           <span>Code</span>
